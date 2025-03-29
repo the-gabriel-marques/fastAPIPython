@@ -1,0 +1,12 @@
+<main>
+    <h2>Lista de Produtos</h2>
+    <ul>
+        {% for product in produtos %}
+        <li>
+            {{ product[1] }} ({{ product[2] }})
+            <a href="/produtos/edit/{{ product[0] }}">Editar</a>
+            <a href="/produtos/delete/{{ product[0] }}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+</main>

@@ -1,17 +1,11 @@
-from typing import Union
-from fastapi import FastAPI
-app = FastAPI()
+from fastapi import FastAPI #importa a classe que cria a aplicação web
+from routes.rotas import router #importa o roteador
 
-@app.get("/")
-def read_root():
-    return {"message": "Olá, mundo com FastAPI!"}
+app = FastAPI() #app vai servir como o o servidor da API
+app.include_router(router) #adiciona o roteadir na aplicação, isso vai permitir que todas as rotas do arquivo rotas.py sejam registradas na API
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+if __name__ == "__main__": #o código dentro do if só vai ser executado se o arquivo for rodado diretamente
+    import uvicorn #usado para rodar aplicações FastAPI
+    uvicorn.run(app, host="127.0.0.1", port=8000) #inicia o servidor localmente
 
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+#Esse código inicia o servidor fastAPI na porta 8000, acessa as rotas do arquivo rotas.py e os endpoints podem ser acessados pleo navegador ou com o postman por exemplo.

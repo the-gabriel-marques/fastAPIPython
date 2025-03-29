@@ -1,0 +1,8 @@
+<main>
+    <h1>Editar Produto</h1>
+    <form method="post" action="/produtos/update/{{ produto[0] }}">
+        <input type="text" name="nome" value="{{ produto[1] }}" required>
+        <input type="number" name="preco" value="{{ produto[2] }}" required>
+        <button type="submit">Atualizar</button>
+    </form>
+</main>
