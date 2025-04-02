@@ -76,7 +76,7 @@ pip install -r requirements.txt
 ```
 
   <li> <h3>Configure o Banco de Dados</h3> </li>
-  <p>Crie um arquivo .env na raiz do projeto com as credenciais para o banco de dados Oracle</p>
+  <p>Atualize o arquivo .env na raiz do projeto com as credenciais para o banco de dados Oracle</p>
 
   ```
 ORACLE_HOST=localhost
